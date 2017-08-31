@@ -24,13 +24,12 @@ before_install:
 
 before_script:
   - cp config/database.travis.yml config/database.yml
-  - psql -c "CREATE USER \"rails-bootstrap\" WITH PASSWORD 'rails-bootstrap';" -U postgres
+  - psql -c "CREATE USER \"wbooks\" WITH PASSWORD 'wbooks';" -U postgres
   - psql -c "DROP DATABASE IF EXISTS \"wbooks_test\";" -U postgres
   - psql -c "CREATE DATABASE \"wbooks_test\" ENCODING 'utf8';" -U postgres
   - bundle exec rake db:migrate
 
 script:
-  - bundle exec rspec spec -fd
   - bundle exec rubocop app spec -R --format simple
 
 #notifications:
@@ -40,3 +39,4 @@ script:
 
 cache:
   bundler: true
+  

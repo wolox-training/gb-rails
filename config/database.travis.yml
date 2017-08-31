@@ -3,5 +3,6 @@ test: &test
   encoding: unicode
   database: wbooks_test
   pool: 5
-  username: rails-bootstrap
-  password: rails-bootstrap
+  username: wbooks
+  password: wbooks
+  

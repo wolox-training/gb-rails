@@ -52,26 +52,10 @@ end
 
 group :test do
   gem 'database_cleaner'
-  gem 'rspec-mocks'
-  gem 'rspec-rails'
-  gem 'shoulda-matchers'
-
-  gem 'formulaic'
-  gem 'launchy'
-
-  gem 'timecop'
-  gem 'webmock'
-
-  # CodeStats
-  gem 'codestats-metrics-reporter', '0.1.9', require: nil
-  gem 'rubycritic', require: false
-  gem 'simplecov', require: false
-
   # Solves 'NoMethodError: assert_template has been extracted to a gem.' as suggested by rspec
   # This error was thrown when using `expect(response).to render_template('template')`
   gem 'rails-controller-testing'
 
-  gem 'rack-test', require: 'rack/test'
 end
 
 # Lints
