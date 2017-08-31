@@ -1,0 +1,8 @@
+test: &test
+  adapter: postgresql
+  encoding: unicode
+  database: wbooks_test
+  pool: 5
+  username: wbooks
+  password: wbooks
+  

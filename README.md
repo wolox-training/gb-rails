@@ -1,1 +1,1 @@
-# gb-rails
+# gb-rails | ![Build Status](https://travis-ci.org/wolox-training/gb-rails.svg?branch=master)
