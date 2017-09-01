@@ -16,12 +16,12 @@ ActiveRecord::Schema.define(version: 20170831205223) do
   enable_extension "plpgsql"
 
   create_table "books", force: :cascade do |t|
-    t.string "Genre", null: false
-    t.string "Author", null: false
-    t.string "Image", null: false
-    t.string "Title", null: false
-    t.string "Publisher", null: false
-    t.string "Year", null: false
+    t.string "genre", null: false
+    t.string "author", null: false
+    t.string "image", null: false
+    t.string "title", null: false
+    t.string "publisher", null: false
+    t.string "year", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -39,8 +39,8 @@ ActiveRecord::Schema.define(version: 20170831205223) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "first_name"
-    t.string "last_name"
+    t.string "first_name", null: false
+    t.string "last_name", null: false
     t.string "verification_code"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
