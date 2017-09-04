@@ -8,6 +8,8 @@ class User < ApplicationRecord
 
   before_validation :generate_verification_code, on: :create
 
+  has_many :rents, dependent: :destroy
+
   def generate_verification_code
     self.verification_code = AuthenticableEntity.verification_code
   end
