@@ -39,6 +39,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'rspec-rails', '~> 3.6'
 end
 
 group :development do
@@ -55,7 +56,9 @@ group :test do
   # Solves 'NoMethodError: assert_template has been extracted to a gem.' as suggested by rspec
   # This error was thrown when using `expect(response).to render_template('template')`
   gem 'rails-controller-testing'
-
+  gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
+  gem 'factory_girl'
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 # Lints
