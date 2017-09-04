@@ -3,4 +3,5 @@ Documentation:
 LineLength:
   Max: 99
 BlockLength:
-  Max: 75
+  Exclude: 
+    - 'spec/**/*'
