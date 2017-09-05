@@ -59,6 +59,7 @@ group :test do
   gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
   gem 'factory_girl'
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'active_model_serializers', '~> 0.10.6'
 end
 
 # Lints
