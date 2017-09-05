@@ -74,3 +74,5 @@ gem 'devise'
 gem 'versionist'
 
 gem 'jwt'
+
+gem 'active_model_serializers', '~> 0.10.6'
