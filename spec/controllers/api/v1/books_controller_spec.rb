@@ -13,7 +13,7 @@ describe Api::V1::BooksController, type: :controller do
 
       it 'responses with the users rents json' do
         expected = ActiveModel::Serializer::CollectionSerializer.new(books).to_json
-        expect(JSON.parse(@response.body)) =~ JSON.parse(expected)
+        expect(JSON.parse(@response.body)).to eq JSON.parse(expected)
       end
 
       it 'responds with 200 status' do
@@ -32,7 +32,7 @@ describe Api::V1::BooksController, type: :controller do
 
       it 'responses with the user rent json' do
         expect(JSON.parse(@response.body)).to eq JSON.parse(
-          BookSerializer.new(book, root: false).to_json
+          BookShowSerializer.new(book, root: false).to_json
         )
       end
 
