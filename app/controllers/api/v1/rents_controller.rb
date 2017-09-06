@@ -19,6 +19,10 @@ module Api
       def rent_params
         params.require(:rent).permit(:book_id, :user_id, :from, :to)
       end
+
+      def set_locale
+        I18n.locale = current_user.locale || I18n.default_locale
+      end
     end
   end
 end
