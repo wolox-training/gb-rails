@@ -1,4 +1,4 @@
-class ModelMailer < ApplicationMailer
+class RentMailer < ApplicationMailer
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
@@ -8,6 +8,6 @@ class ModelMailer < ApplicationMailer
   def new_rent_notification(rent, today)
     @rent = rent
     @today = today
-    mail to: 'gabriel.browarnik@wolox.com.ar', subject: 'New rent created'
+    mail to: @rent.user.email, subject: 'New rent created'
   end
 end
