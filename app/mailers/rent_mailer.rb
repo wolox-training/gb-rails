@@ -5,9 +5,9 @@ class RentMailer < ApplicationMailer
   #   en.model_mailer.new_record_notification.subject
   #
 
-  def new_rent_notification(rent)
+  def new_rent_notification(rent, today)
     @rent = rent
-    @today = Time.zone.today
+    @today = today
     mail to: @rent.user.email, subject: 'New rent created'
   end
 end
