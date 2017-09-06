@@ -9,6 +9,7 @@ module Api
       def create
         @rent = Rent.new(rent_params)
         if @rent.save
+          ModelMailer.new_rent_notification(@rent, Time.zone.today).deliver
           render json: @rent
         else
           render json: { errors: @rent.errors }, status: :bad_request
