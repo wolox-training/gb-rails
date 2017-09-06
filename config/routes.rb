@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   api_version(module: 'api/v1', path: { value: 'api/v1' }, defaults: { format: :json }) do
     resources :books, only: [:index, :show]
     resources :users do
+      resources :rents, only: [:index, :create]
       collection do
         resources :sessions, only: [:create] do
           collection do
