@@ -1,18 +1,14 @@
-<h3> Hi, </h3>
-
-<p>Today, <%= @today %>, a new rent has been added: </p>
+<h3> <%= t('new') %> <%= t('rent') %> <%= @today %>: </h3>
 
 <ul>
-  <li>Book</li>
+  <li><%= t('book') %>:</li>
   <ul>
-    <li>Title: <%= @rent.book.title %></li>
-    <li>Author: <%= @rent.book.author %></li>
-    <li>Genre: <%= @rent.book.genre %></li>
-    <li>Publisher: <%= @rent.book.publisher %></li>
-    <li>Year: <%= @rent.book.year %></li>
+    <li><%= t('activerecord.attributes.book.title') %>: <%= @rent.book.title %></li>
+    <li><%= t('activerecord.attributes.book.author') %>: <%= @rent.book.author %></li>
+    <li><%= t('activerecord.attributes.book.genre') %>: <%= @rent.book.genre %></li>
+    <li><%= t('activerecord.attributes.book.publisher') %>: <%= @rent.book.publisher %></li>
+    <li><%= t('activerecord.attributes.book.year') %>: <%= @rent.book.year %></li>
   </ul>
-  <li>From: <%= @rent.from %></li>
-  <li>To: <%= @rent.to %></li>
+  <li><%= t('from') %>: <%= @rent.from %></li>
+  <li><%= t('to') %>: <%= @rent.to %></li>
 </ul>
-
-<p>Thanks</p>

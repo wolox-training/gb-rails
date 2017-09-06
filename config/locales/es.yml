@@ -1,0 +1,15 @@
+es:
+  activerecord:
+    attributes:
+      book:
+        genre: "genero"
+        author: "autor"
+        publisher: "publicador"
+        year: "año"
+        title: "titulo"
+  book: 'libro'
+  user: 'usuario'
+  rent: 'alquiler'
+  from: 'desde'
+  to: 'hasta'
+  new: 'nuevo'
