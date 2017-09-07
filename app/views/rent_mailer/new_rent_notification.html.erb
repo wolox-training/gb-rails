@@ -1,7 +1,7 @@
-<h3> <%= t('new') %> <%= t('rent') %> <%= @today %>: </h3>
+<h3> <%= t('mail_subject') %> <%= @today %>: </h3>
 
 <ul>
-  <li><%= t('book') %>:</li>
+  <li><%= t('activerecord.attributes.rent.book') %>:</li>
   <ul>
     <li><%= t('activerecord.attributes.book.title') %>: <%= @rent.book.title %></li>
     <li><%= t('activerecord.attributes.book.author') %>: <%= @rent.book.author %></li>
@@ -9,6 +9,6 @@
     <li><%= t('activerecord.attributes.book.publisher') %>: <%= @rent.book.publisher %></li>
     <li><%= t('activerecord.attributes.book.year') %>: <%= @rent.book.year %></li>
   </ul>
-  <li><%= t('from') %>: <%= @rent.from %></li>
-  <li><%= t('to') %>: <%= @rent.to %></li>
+  <li><%= t('activerecord.attributes.rent.from') %>: <%= @rent.from %></li>
+  <li><%= t('activerecord.attributes.rent.to') %>: <%= @rent.to %></li>
 </ul>

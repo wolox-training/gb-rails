@@ -7,9 +7,9 @@ es:
         publisher: "publicador"
         year: "año"
         title: "titulo"
-  book: 'libro'
-  user: 'usuario'
-  rent: 'alquiler'
-  from: 'desde'
-  to: 'hasta'
-  new: 'nuevo'
+      rent:
+        book: 'libro'
+        user: 'usuario'
+        from: 'desde'
+        to: 'hasta'
+  mail_subject: 'Nuevo alquiler registrado'

@@ -38,9 +38,9 @@ en:
         publisher: "publisher"
         year: "year"
         title: "title"
-  book: 'book'
-  user: 'user'
-  rent: 'rent'
-  from: 'from'
-  to: 'to'
-  new: 'new'
+      rent:
+        book: 'book'
+        user: 'user'
+        from: 'from'
+        to: 'to'
+  mail_subject: 'New rent created'
