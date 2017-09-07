@@ -1,0 +1,18 @@
+<h3> Hi, </h3>
+
+<p>Today, <%= @today %>, a new rent has been added: </p>
+
+<ul>
+  <li>Book</li>
+  <ul>
+    <li>Title: <%= @rent.book.title %></li>
+    <li>Author: <%= @rent.book.author %></li>
+    <li>Genre: <%= @rent.book.genre %></li>
+    <li>Publisher: <%= @rent.book.publisher %></li>
+    <li>Year: <%= @rent.book.year %></li>
+  </ul>
+  <li>From: <%= @rent.from %></li>
+  <li>To: <%= @rent.to %></li>
+</ul>
+
+<p>Thanks</p>

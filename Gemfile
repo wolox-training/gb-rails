@@ -76,3 +76,7 @@ gem 'versionist'
 gem 'jwt'
 
 gem 'active_model_serializers', '~> 0.10.6'
+
+gem 'sidekiq'
+
+gem 'dotenv-rails', groups: [:development, :test]
