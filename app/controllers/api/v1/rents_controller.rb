@@ -11,7 +11,7 @@ module Api
         if @rent.save
           render json: @rent
         else
-          render status: 500
+          render json: { errors: @rent.errors }, status: :bad_request
         end
       end
 
