@@ -8,8 +8,11 @@ module Api
 
       def create
         @rent = Rent.new(rent_params)
-        @rent.save
-        render json: @rent
+        if @rent.save
+          render json: @rent
+        else
+          render status: 500
+        end
       end
 
       def rent_params
