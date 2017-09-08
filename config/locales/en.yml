@@ -30,4 +30,17 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      book:
+        genre: "genre"
+        author: "author"
+        publisher: "publisher"
+        year: "year"
+        title: "title"
+      rent:
+        book: 'book'
+        user: 'user'
+        from: 'from'
+        to: 'to'
+  mail_subject: 'New rent created'
