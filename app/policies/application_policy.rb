@@ -1,9 +1,9 @@
 class ApplicationPolicy
-  attr_reader :user, :rent
+  attr_reader :user, :resource
 
-  def initialize(user, rent)
+  def initialize(user, resource)
     @user = user
-    @rent = rent
+    @resource = resource
   end
 
   def index?

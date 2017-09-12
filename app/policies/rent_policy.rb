@@ -1,7 +1,4 @@
 class RentPolicy < ApplicationPolicy
-  attr_reader :rent
-  private :rent
-
   class Scope < Scope
     def resolve
       scope.where(user_id: user.id)
@@ -9,10 +6,10 @@ class RentPolicy < ApplicationPolicy
   end
 
   def index?
-    user.present? && user == rent.user
+    user.present? && user == resource.user
   end
 
   def create?
-    user.present? && user == rent.user
+    user.present? && user == resource.user
   end
 end
