@@ -35,6 +35,10 @@ describe Api::V1::BookSuggestionsController, type: :controller do
       it 'responds with 400 status' do
         expect(response).to have_http_status(:bad_request)
       end
+
+      it 'doesn\'t create a new book suggestion' do
+        expect { subject }.to change { BookSuggestion.count }.by(0)
+      end
     end
   end
 end
