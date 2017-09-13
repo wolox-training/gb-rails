@@ -53,6 +53,5 @@ class ApiController < ApplicationController
 
   def user_not_authorized
     render json: { errors: 'User not authorized' }, status: :unauthorized
-    redirect_to(request.referer || root_path)
   end
 end
