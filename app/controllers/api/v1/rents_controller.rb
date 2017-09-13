@@ -2,12 +2,14 @@ module Api
   module V1
     class RentsController < ApiController
       def index
-        @rents = Rent.all
-        render json: @rents
+        rent = Rent.new(user_id: params[:user_id])
+        authorize rent
+        render json: policy_scope(Rent)
       end
 
       def create
         @rent = Rent.new(rent_params)
+        authorize @rent
         if @rent.save
           RentMailer.new_rent_notification(@rent).deliver_later
           render json: @rent
@@ -18,10 +20,6 @@ module Api
 
       def rent_params
         params.require(:rent).permit(:book_id, :user_id, :from, :to)
-      end
-
-      def set_locale
-        I18n.locale = current_user.locale || I18n.default_locale
       end
     end
   end

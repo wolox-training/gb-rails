@@ -82,3 +82,5 @@ gem 'sidekiq'
 gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'activeadmin'
+
+gem "pundit"
