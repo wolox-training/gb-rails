@@ -37,7 +37,7 @@ describe Api::V1::BookSuggestionsController, type: :controller do
       end
 
       it 'doesn\'t create a new book suggestion' do
-        expect { subject }.to change { BookSuggestion.count }.by(0)
+        expect { subject }.not_to change(BookSuggestion, :count)
       end
     end
   end
