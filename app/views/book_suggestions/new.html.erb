@@ -1,4 +1,3 @@
-
 <%= form_tag("/api/v1/book_suggestions") do %>
   Autor: <%= text_field(:book_suggestion, :author) %><br>
   Titulo: <%= text_field(:book_suggestion, :title) %><br>
@@ -13,6 +12,7 @@
 <table id="suggestionsTable" style="width:60%">
   <thead>
     <tr>
+      <th>Id</th>
       <th>Autor</th>
       <th>Titulo</th> 
       <th>Publicador</th>
@@ -23,42 +23,17 @@
     </tr>
   </thead>
   <tbody>
+    <% @book_suggestions.each do |b| %>
+      <tr>
+        <td><%= b.id %></td>
+        <td><%= b.author %></td>
+        <td><%= b.title %></td>
+        <td><%= b.publisher %></td>
+        <td><%= b.editorial %></td>
+        <td><%= b.year %></td>
+        <td><%= b.link %></td>
+        <td><%= b.price %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
-
-
-<script>
-  function createRow(json) {
-    var row = '<tr>';
-    row += `<td>${json.author}</td>`;
-    row += `<td>${json.title}</td>`;
-    row += `<td>${json.publisher}</td>`;
-    row += `<td>${json.editorial}</td>`;
-    row += `<td>${json.year}</td>`;
-    row += `<td>${json.link}</td>`;
-    row += `<td>${json.price}</td>`;
-    row += '</tr>';
-    return row;
-  }
-
-  $('form').on('submit', function(event) {
-    event.preventDefault();  
-    $form = $(this);
-    $.ajax({
-      type: "POST",
-      url: $form.attr('action'),
-      data: $form.serialize(),
-      dataType: "JSON",
-      success: function(result) {
-        console.log(result);
-        var row = createRow(result);
-        $('#suggestionsTable > tbody:last-child').append(row);
-        return false;
-      },
-      error: function(err) {
-        console.log(err);
-        return false;
-      }
-    });
-  });
-</script>
