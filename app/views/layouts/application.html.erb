@@ -12,5 +12,6 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
+     <li><%= link_to "Login with Google", user_google_oauth2_omniauth_authorize_path %></li>
   </body>
 </html>

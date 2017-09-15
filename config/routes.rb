@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   resources :book_suggestions, only: :new
-  devise_for :users, ActiveAdmin::Devise.config
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' } do
+    get "sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
+  end
+
   ActiveAdmin.routes(self)
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root to: "home#index"
+  root 'book_suggestions#new'
 
   # API Endpoints
   api_version(module: 'api/v1', path: { value: 'api/v1' }, defaults: { format: :json }) do
